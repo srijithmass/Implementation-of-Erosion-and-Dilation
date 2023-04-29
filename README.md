@@ -45,7 +45,7 @@ text_image = np.zeros((100,250),dtype = 'uint8')
 font = cv2.FONT_HERSHEY_COMPLEX_SMALL
 cv2.putText(text_image,"SRIJITH",(5,70),font,2,(255),2,cv2.LINE_AA) 
 plt.title("Original Image")
-plt.imshow(text_image,'Blues')
+plt.imshow(text_image,'binary')
 plt.axis('off')
 ```
 ### Create the structuring element
@@ -56,14 +56,14 @@ kernel = cv2.getStructuringElement(cv2.MORPH_CROSS,(4,4))
 ```python
 image_erode = cv2.erode(text_image,kernel)
 plt.title("Eroded Image")
-plt.imshow(image_erode,'Blues')
+plt.imshow(image_erode,'bianry')
 plt.axis('off')
 ```
 ### Dilate the image
 ```python
 image_dilate = cv2.dilate(text_image,kernel)
 plt.title("Dilated Image")
-plt.imshow(image_dilate,'Blues')
+plt.imshow(image_dilate,'binary')
 plt.axis('off')
 ```
 ## Output:
